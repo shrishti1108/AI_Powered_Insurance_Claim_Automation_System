@@ -106,23 +106,25 @@ Streamlit Dashboard Output
 
 ---
 
-⚡ How to Run
-🧩 Option 1: On Local System
+## ⚡ How to Run
 
+---
+
+### 🧩 Option 1: On Local System
+
+```bash
+# Clone this repository
 git clone https://github.com/<your-username>/insurance-claim-ai.git
+
+# Navigate to the project directory
 cd insurance-claim-ai
+
+# Install required dependencies
 pip install -r requirements.txt
+
+# Run the Streamlit app
 streamlit run app.py
-
-
-🧩 Option 2: On Google Colab
-
-!pip install streamlit pyngrok transformers pdfplumber scikit-learn torch pandas --quiet
-from pyngrok import ngrok
-!streamlit run app.py &>/dev/null&
-public_url = ngrok.connect(8501)
-print("🌐 Streamlit App Live At:", public_url)
-
+```
 ## 📊 Example Outputs
 
 **Uploaded Document:** Claim Form.pdf  
