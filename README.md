@@ -124,6 +124,10 @@ pip install -r requirements.txt
 
 # Run the Streamlit app
 streamlit run app.py
+```
+
+### 🧩 Option 2: On Google Colab
+
 ```bash
 # Install dependencies
 !pip install streamlit pyngrok transformers pdfplumber scikit-learn torch pandas --quiet
