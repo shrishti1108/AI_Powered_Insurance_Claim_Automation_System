@@ -124,7 +124,7 @@ pip install -r requirements.txt
 
 # Run the Streamlit app
 streamlit run app.py
-```
+```bash
 # Install dependencies
 !pip install streamlit pyngrok transformers pdfplumber scikit-learn torch pandas --quiet
 
@@ -137,7 +137,7 @@ from pyngrok import ngrok
 # Generate a public URL
 public_url = ngrok.connect(8501)
 print("🌐 Streamlit App Live At:", public_url)
-
+```
 ## 📊 Example Outputs
 
 **Uploaded Document:** Claim Form.pdf  
