@@ -106,114 +106,103 @@ Streamlit Dashboard Output
 
 ---
 
-## 🧠 Workflow Diagram
-
-```mermaid
-flowchart TD
-A[Upload PDF Document] --> B[Document Classifier (BART)]
-B --> C[Extracted Claim Data]
-C --> D[Claim Prediction (Random Forest)]
-D --> E[Generative AI Explanation (FLAN-T5)]
-E --> F[Streamlit Dashboard Output]
 ⚡ How to Run
 🧩 Option 1: On Local System
+
 git clone https://github.com/<your-username>/insurance-claim-ai.git
 cd insurance-claim-ai
 pip install -r requirements.txt
 streamlit run app.py
 
 
-Then open http://localhost:8501
-
 🧩 Option 2: On Google Colab
+
 !pip install streamlit pyngrok transformers pdfplumber scikit-learn torch pandas --quiet
 from pyngrok import ngrok
 !streamlit run app.py &>/dev/null&
 public_url = ngrok.connect(8501)
 print("🌐 Streamlit App Live At:", public_url)
 
-📊 Example Outputs
+## 📊 Example Outputs
 
-Uploaded Document: Claim Form.pdf
-Predicted Type: Claim Form (Confidence: 94.7%)
-Claim Decision: ✅ Approved
-Explanation:
+**Uploaded Document:** Claim Form.pdf  
+**Predicted Type:** Claim Form (Confidence: 94.7%)  
+**Claim Decision:** ✅ Approved  
+**Explanation:**  
+> “The claim has been approved because the vehicle is relatively new, has a high NCAP safety rating, and includes key safety features such as brake assist and central locking.”
 
-“The claim has been approved because the vehicle is relatively new, has a high NCAP safety rating, and includes key safety features such as brake assist and central locking.”
+---
 
-🧩 Dataset
+## 🧩 Dataset
 
-Insurance claim dataset containing vehicle, policy, and safety features.
+- **Type:** Insurance claim dataset containing vehicle, policy, and safety features.  
+- **Target Column:** `claim_status` → (1 = Approved, 0 = Denied)  
+- **Usage:** Used for training claim prediction model  
+- **Extra:** Additional datasets (Kaggle / synthetic) can be used for document classification testing.
 
-Target column: claim_status → (1 = Approved, 0 = Denied)
+---
 
-Additional datasets (Kaggle / synthetic) can be used for document classification testing.
+## 🚧 Challenges
 
-🚧 Challenges
+- Extracting clean text from scanned PDFs (OCR required)  
+- Limited labeled insurance document data  
+- Balancing dataset for fair claim prediction  
+- Integrating ML + NLP + GenAI models in a single dashboard  
+- Colab session limitations for Streamlit runtime  
 
-Extracting clean text from scanned PDFs (OCR required)
+---
 
-Limited labeled insurance document data
+## ⚙️ Limitations
 
-Balancing dataset for fair claim prediction
+- Accuracy depends on dataset size and quality  
+- Generated explanations may not always be perfectly factual  
+- Colab-based hosting is temporary (session resets after runtime ends)
 
-Integrating ML + NLP + GenAI models in a single dashboard
+---
 
-Colab session limitations for Streamlit runtime
+## 🌟 Results
 
-⚙️ Limitations
+| Module | Accuracy / Quality |
+|---------|--------------------|
+| Document Classification | 92–96% |
+| Claim Prediction | 88–90% |
+| Generative Explanation | ~95% human readability |
+| Dashboard | Fully interactive (Streamlit UI) |
 
-Accuracy depends on dataset size and quality
+---
 
-Generated explanations may not always be perfectly factual
+## 🚀 Future Scope
 
-Colab-based hosting is temporary (session resets after runtime ends)
+- Integrate real insurance APIs for live claim data  
+- Add image-based OCR for scanned claim forms  
+- Train a custom fine-tuned LLM for the insurance domain  
+- Deploy permanently on Streamlit Cloud / Hugging Face Spaces  
+- Enable multi-language support for claim explanations  
 
-🌟 Results
-Module	Accuracy / Quality
-Document Classification	92–96%
-Claim Prediction	88–90%
-Generative Explanation	~95% human readability
-Dashboard	Fully interactive (Streamlit UI)
-🚀 Future Scope
+---
 
-Integrate real insurance APIs for live claim data
+## 💡 Applications
 
-Add image-based OCR for scanned claim forms
+- 🏢 **Insurance companies** — automated claim handling  
+- 🏦 **Banking / Finance** — loan approval transparency  
+- ⚕️ **Healthcare** — automated medical claim verification  
+- 🏛️ **Government welfare** — subsidy or benefit claim automation  
 
-Train a custom fine-tuned LLM for insurance domain
+---
 
-Deploy permanently on Streamlit Cloud / Hugging Face Spaces
+## 🧠 Skills Demonstrated
 
-Multi-language support for claim explanations
+- Machine Learning (Random Forest, feature engineering)  
+- NLP (Transformer-based classification)  
+- Generative AI (Text explanation generation)  
+- Python Programming  
+- Data Analysis and Visualization  
+- Web App Development (Streamlit)  
+- Model Integration and Deployment  
 
-💡 Applications
+---
 
-🏢 Insurance companies — automated claim handling
+## 🏁 Conclusion
 
-🏦 Banking / Finance — loan approval transparency
-
-⚕️ Healthcare — automated claim verification
-
-🏛️ Government welfare — benefit claim automation
-
-🧠 Skills Demonstrated
-
-Machine Learning (Random Forest, feature engineering)
-
-NLP (Transformer-based classification)
-
-Generative AI (Text explanation generation)
-
-Python Programming
-
-Data Analysis and Visualization
-
-Web App Development (Streamlit)
-
-Model Integration and Deployment
-
-🏁 Conclusion
-
-The “AI-Powered Insurance Claim Automation System” demonstrates how Generative AI can enhance transparency in automated decision-making.
-By integrating NLP, ML, and GenAI in a unified dashboard, this project provides an intelligent, explainable, and user-friendly solution to automate insurance claim processing.
+> The **AI-Powered Insurance Claim Automation System** demonstrates how Generative AI can enhance transparency in automated decision-making.  
+> By integrating NLP, ML, and GenAI in a unified dashboard, this project provides an intelligent, explainable, and user-friendly solution to automate insurance claim processing.
