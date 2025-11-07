@@ -114,7 +114,7 @@ Streamlit Dashboard Output
 
 ```bash
 # Clone this repository
-git clone https://github.com/<your-username>/insurance-claim-ai.git
+git clone https://github.com/shrishti1108/insurance-claim-ai.git
 
 # Navigate to the project directory
 cd insurance-claim-ai
@@ -125,6 +125,19 @@ pip install -r requirements.txt
 # Run the Streamlit app
 streamlit run app.py
 ```
+# Install dependencies
+!pip install streamlit pyngrok transformers pdfplumber scikit-learn torch pandas --quiet
+
+# Import ngrok and start Streamlit
+from pyngrok import ngrok
+
+# Run Streamlit app in the background
+!streamlit run app.py &>/dev/null&
+
+# Generate a public URL
+public_url = ngrok.connect(8501)
+print("🌐 Streamlit App Live At:", public_url)
+
 ## 📊 Example Outputs
 
 **Uploaded Document:** Claim Form.pdf  
